@@ -51,9 +51,12 @@ public class Partido {
 	
 	public void ganador(int[] resultado) {
 		if(resultado[0] < resultado[1]) {
-			setGanador(equipos[0]);
+			equipos[0].setPuntos(equipos[0].getPuntos() + 3);
+		}else if (resultado[0] > resultado[1] ){
+			equipos[1].setPuntos(equipos[1].getPuntos() + 3);
 		}else {
-			setGanador(equipos[1]);
+			equipos[0].setPuntos(equipos[0].getPuntos() + 1);
+			equipos[1].setPuntos(equipos[1].getPuntos() + 1);
 		}
 	}
 	

@@ -6,9 +6,16 @@ public class Equipo {
 	private String equipacionCasa;
 	private String equipacionFuera;
 	private Jugador[] jugadores;
+	private int puntos;
 	
 	
 	
+	public int getPuntos() {
+		return puntos;
+	}
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
 	public String getNombre() {
 		return nombre;
 	}
