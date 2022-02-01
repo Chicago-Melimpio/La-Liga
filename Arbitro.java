@@ -1,23 +1,20 @@
 
-public class Arbitro {
-	private String registro;
-	private Jornada jornada;
-	public Jornada getJornada() {
-		return jornada;
+public class Arbitro extends Persona {
+	int licencia;
+
+	public int getLicencia() {
+		return licencia;
 	}
 
-	public void setJornada(Jornada jornada) {
-		this.jornada = jornada;
+	public void setLicencia(int licencia) {
+		this.licencia = licencia;
 	}
 
-	public Arbitro() {}
-
-	public String getRegistro() {
-		return registro;
-	}
-
-	public void setRegistro(String registro) {
-		this.registro = registro;
+	@Override
+	public String toString() {
+		return "Arbitro [licencia=" + licencia + ", getNombre()=" + getNombre() + ", getApellidos()=" + getApellidos()
+				+ ", getEdad()=" + getEdad() + "]";
 	}
 	
+
 }

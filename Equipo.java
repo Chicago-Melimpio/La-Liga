@@ -2,14 +2,34 @@
 public class Equipo {
 	private String nombre;
 	private String club;
+	private Campo campo;
 	private Entrenador entrenador;
 	private String equipacionCasa;
 	private String equipacionFuera;
 	private Jugador[] jugadores;
+	private int golesFavor;
+	private int golesContra;
 	private int puntos;
 	
+	public int getGolesFavor() {
+		return golesFavor;
+	}
+	public void setGolesFavor(int golesFavor) {
+		this.golesFavor = golesFavor;
+	}
+	public int getGolesContra() {
+		return golesContra;
+	}
+	public void setGolesContra(int golesContra) {
+		this.golesContra = golesContra;
+	}
 	
-	
+	public Campo getCampo() {
+		return campo;
+	}
+	public void setCampo(Campo campo) {
+		this.campo = campo;
+	}
 	public int getPuntos() {
 		return puntos;
 	}

@@ -16,12 +16,13 @@ public class Partido {
 		this.arbitro = arbitro;
 	}
 
-	public Horario getHorario() {
-		return horario;
+	public String getHorario() {
+		return horario.getFecha() + " " + horario.getHora();
 	}
 
 	public void setHorario(Horario horario) {
-		this.horario = horario;
+		this.horario = new Horario(horario.getHora());
+		
 	}
 
 	public int[] getResultado() {
@@ -37,6 +38,7 @@ public class Partido {
 	}
 
 	public void setEquipos(Equipo equipo1, Equipo equipo2) {
+		this.equipos = new Equipo[2];
 		this.equipos[0] = equipo1;
 		this.equipos[1] = equipo2;
 	}

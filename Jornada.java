@@ -35,4 +35,11 @@ public class Jornada {
 	public void setHorario(String  hora) {
 		this.horario  = new Horario(hora);
 	}
+
+	public Horario getHorario() {
+		return horario;
+	}
+
+	
+	
 }
