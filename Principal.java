@@ -259,35 +259,38 @@ public class Principal {
 	private static Calendario crearCalendario(Equipo[] equipos, Arbitro[] arbitros) {
 		Calendario calendario = new Calendario();
 		String[] horas = {"10:00","11:30","13:00","14:30","16:00"};
-		String hora = horas[(int)Math.floor(Math.random()*5)];
 		Jornada[] jornadas = new Jornada[18];
-		Partido[] partidos = new Partido[5];
 		Equipo equipo1_ant = new Equipo();
 		Equipo equipo2_ant = new Equipo();
 		Arbitro arbitro_ant = new Arbitro();
-		for(int i = 0; i < 18; i++) {
+		for(int i = 0; i < jornadas.length; i++) {
 			jornadas[i] = new Jornada();
-			jornadas[i].setHorario(hora);
+			Partido[] partidos= new Partido[5];
 			//Asignamos arbitros a los partidos
-			for(int j = 0; j < 5; j++) {
+			for(int j = 0; j < partidos.length; j++) {
 				partidos[j] = new Partido();
+				String hora = horas[(int)Math.floor(Math.random()*5)];
+				Horario horario = new Horario(hora);
+				partidos[j].setHorario(horario);
 				Partido partido_jornada = partidos[j];
 				partidos[j].setArbitro(arbitros[j]);
 				
 				//Asignamos los equipos 
-				Equipo equipo1 = equipos[(int) Math.floor(Math.random()*equipos.length)];
-				while(equipo1.equals(equipo1_ant) && equipo1.equals(equipo2_ant) ) {
-					equipo1 = equipos[(int) Math.floor(Math.random()*equipos.length)];
-				}
-				equipo1_ant = equipo1;
-				Equipo equipo2 = equipos[(int) Math.floor(Math.random()*equipos.length)];
-				while(equipo2.equals(equipo1) && equipo1.equals(equipo2_ant)) {
-					equipo2 = equipos[(int) Math.floor(Math.random()*equipos.length)];
-				}
-				equipo2_ant = equipo2;
+				int random1=(int) Math.floor(Math.random()*equipos.length);
+				Equipo equipo1 = equipos[random1];
+//				while(equipo1.equals(equipo1_ant) && equipo1.equals(equipo2_ant) ) {
+//					equipo1 = equipos[(int) Math.floor(Math.random()*equipos.length)];
+//				}
+//				equipo1_ant = equipo1;
+				int random2=(int) Math.floor(Math.random()*equipos.length);
+				Equipo equipo2 = equipos[random2];
+//				while(equipo2.equals(equipo1) && equipo1.equals(equipo2_ant)) {
+//					equipo2 = equipos[(int) Math.floor(Math.random()*equipos.length)];
+//				}
+//				equipo2_ant = equipo2;
 
 				partidos[j].setEquipos(equipo1,equipo2);
-				partidos[j].setHorario(jornadas[i].getHorario());
+				
 			}
 			jornadas[i].setPartidos(partidos);
 		}

@@ -2,7 +2,7 @@
 public class Jornada {
 	public Partido[] partidos;
 	public Equipo[] equipos;
-	public Horario horario;
+	
 	
 	public Jornada() {}
 	
@@ -32,13 +32,7 @@ public class Jornada {
 	public void ganadores() {
 		
 	}
-	public void setHorario(String  hora) {
-		this.horario  = new Horario(hora);
-	}
-
-	public Horario getHorario() {
-		return horario;
-	}
+	
 
 	
 	
