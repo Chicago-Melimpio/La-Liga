@@ -15,13 +15,13 @@ public class Equipo {
 		return golesFavor;
 	}
 	public void setGolesFavor(int golesFavor) {
-		this.golesFavor = golesFavor;
+		this.golesFavor = this.golesFavor + golesFavor;
 	}
 	public int getGolesContra() {
 		return golesContra;
 	}
 	public void setGolesContra(int golesContra) {
-		this.golesContra = golesContra;
+		this.golesContra = this.golesContra + golesContra;
 	}
 	
 	public Campo getCampo() {

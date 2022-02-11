@@ -39,7 +39,7 @@ public class Clasificacion {
 						listaElementos[j]=temp;
 					}
 				}else if((listaElementos[j-1].getPuntos()==listaElementos[j].getPuntos()) && (listaElementos[j-1].getGolesFavor()<listaElementos[j].getGolesFavor())) {
-					if(listaElementos[j-1].getGolesContra()>listaElementos[j].getGolesContra()) {
+					if(listaElementos[j-1].getGolesContra()<listaElementos[j].getGolesContra()) {
 						temp=listaElementos[j-1];
 						listaElementos[j-1]=listaElementos[j];
 						listaElementos[j]=temp;
@@ -56,8 +56,8 @@ public class Clasificacion {
 			ordenar();
 			Equipo[] equipo = this.equipos;
 			System.out.println("CLASIFICACION! \n");
-			for(int i = 0; i < equipo.length-1; i++) {
-				System.out.println((i+1) + "º posicon: " + equipo[i].getNombre() + " " + equipo[i].getPuntos()+" Puntos");
+			for(int i = 0; i < equipo.length; i++) {
+				System.out.println((i+1) + "º posicon: " + equipo[i].getNombre() + " " + equipo[i].getPuntos()+" Puntos " + equipo[i].getGolesFavor() + " Goles a favor" + " " + equipo[i].getGolesContra() + " Goles en contra");
 			}
 		}
 }
