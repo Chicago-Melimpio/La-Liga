@@ -9,12 +9,13 @@ public class Principal {
 		int numeroEquipos = (int) Math.floor(Math.random()*13)+4;
 		Equipo[] listaEquipos = crearEquipos(numeroEquipos, edad);
 		Arbitro [] listaArbitros = crearArbitros();
-
+		int j = 0;
+		String o;
 		Iniciar(listaEquipos);
 		Calendario calendario = crearCalendario(listaEquipos, listaArbitros);
 
-		System.out.println("Seleccione opcion: \n 1. Mostrar Equipos. \n 2.Mostrar Arbitros. \n 3.Todas las plantillas.  \n 4. Mostrar la plantilla de un equipo. \n"
-				+ " 5. Mostrar Calendario. \n" + "6. Jugar \n" + "7. Mostrar la Clasificación");
+		System.out.println("Seleccione opcion: \n 1. Mostrar Equipos. \n 2.Mostrar Arbitros. \n 3.Todas las plantillas.  \n "
+				+ "4. Mostrar Calendario. \n" + " 5. Jugar \n" + " 6. Mostrar la Clasificación");
 
 		int opcion;
 		opcion = sc.nextInt();
@@ -22,33 +23,51 @@ public class Principal {
 			switch(opcion) {
 			case 1:
 				mostrarEquipos(listaEquipos);
-				break;
-			case 2:
-				mostrarArbitros(listaArbitros);
-				break;
-			case 3:
-				mostrarEquiposLiga(listaEquipos);				
-				break;
-			case 4:
 				System.out.print("Seleccione equipo: ");
 				int i = sc.nextInt();
 				System.out.println();
 				Equipo equipo = listaEquipos[i];
 				mostrarPlantilla(equipo);
+				break;			
+				
+			case 2:
+				mostrarArbitros(listaArbitros);
 				break;
-			case 5:
+			case 3:
+				mostrarEquiposLiga(listaEquipos);
+				break;
+				
+			case 4:
 				mostrarCalendario(calendario);
 				break;
-			case 6:
-				jugarPratidos(calendario);
-				
+			case 5:
+
+				if(j == 0) {
+					jugarPratidos(calendario);
+					j = 1;
+				}else {
+					System.out.println("Quieres resetear los partidos? S/N");
+					System.out.print("Marque la opcion: ");
+					o = sc.next();
+					if (( o.contains( "S") || (o.contains("s")))){
+						jugarPratidos(calendario);
+						j = 1;
+					}else {
+						j = 1;
+					}
+				}
+
 				break;
-			case 7:
+			case 6:
 				Clasificacion clasificacion = new Clasificacion();
 				clasificacion.setEquipos(listaEquipos);
 				clasificacion.mostrar();
 				System.out.println();
 				break;
+				
+			default:
+				break;
+				
 
 			}
 			if(opcion != 0) {
@@ -57,8 +76,7 @@ public class Principal {
 			}
 		}
 
-
-
+		System.out.println("FIN DE LA LIGA!");
 		System.out.println();
 
 
@@ -420,7 +438,8 @@ public class Principal {
 				jornadas[i].generarResultado(partidos[j]);
 				int[] k = partidos[j].getResultado();
 				partidos[j].ganador(k);	
-				System.out.println(partidos[j].getHorario() + " " + local.getNombre() +" "+ local.getGolesFavor() + " - "  + visitante.getGolesFavor()+" "+ visitante.getNombre());
+				System.out.println(partidos[j].getHorario() + " " + local.getNombre() +" "+ k[0] 
+				+ " - "  + k[1]+" "+ visitante.getNombre() + " Campo: " + local.getCampo().getNombre());
 				System.out.println();
 			}
 		}

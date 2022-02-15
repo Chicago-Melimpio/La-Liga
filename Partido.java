@@ -52,13 +52,20 @@ public class Partido {
 	public void ganador(int[] resultado) {
 		if(resultado[0] < resultado[1]) {
 			this.Local.setPuntos(this.Local.getPuntos() + 3);
-			
+			this.Local.setPartidosGanados(this.Local.getPartidosGanados()+1);
+			this.Visitante.setPartidosPerdidos(this.Visitante.getPartidosPerdidos()+1);
 		}else if (resultado[0] > resultado[1] ){
 			this.Visitante.setPuntos(this.Visitante.getPuntos() + 3);
+			this.Visitante.setPartidosGanados(this.Visitante.getPartidosGanados()+1);
+			this.Local.setPartidosPerdidos(this.Local.getPartidosPerdidos()+1);
 		}else {
 			this.Local.setPuntos(this.Local.getPuntos() + 1);
 			this.Visitante.setPuntos(this.Visitante.getPuntos() + 1);
+			this.Visitante.setPartidosEmpatados(this.Visitante.getPartidosEmpatados()+1);
+			this.Local.setPartidosEmpatados(this.Local.getPartidosEmpatados()+1);
 		}
+		this.Local.setPartidos(this.Local.getPartidos()+1);
+		this.Visitante.setPartidos(this.Visitante.getPartidos()+1);
 		this.Local.setGolesFavor(resultado[0]);
 		this.Local.setGolesContra(resultado[1]);
 		this.Visitante.setGolesFavor(resultado[1]);

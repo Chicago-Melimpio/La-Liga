@@ -7,9 +7,39 @@ public class Equipo {
 	private String equipacionCasa;
 	private String equipacionFuera;
 	private Jugador[] jugadores;
+	private int partidos = 0;
+	private int partidosGanados = 0;
+	private int partidosPerdidos = 0;
+	private int partidosEmpatados = 0;
 	private int golesFavor;
 	private int golesContra;
 	private int puntos;
+	
+	public int getPartidosEmpatados() {
+		return partidosEmpatados;
+	}
+	public void setPartidosEmpatados(int partidosEmpatados) {
+		this.partidosEmpatados = partidosEmpatados;
+	}
+	public int getPartidosGanados() {
+		return partidosGanados;
+	}
+	public void setPartidosGanados(int partidosGanados) {
+		this.partidosGanados = partidosGanados;
+	}
+	public int getPartidosPerdidos() {
+		return partidosPerdidos;
+	}
+	public void setPartidosPerdidos(int partidosPerdidos) {
+		this.partidosPerdidos = partidosPerdidos;
+	}
+	
+	public int getPartidos() {
+		return partidos;
+	}
+	public void setPartidos(int partidos) {
+		this.partidos = partidos;
+	}
 	
 	public int getGolesFavor() {
 		return golesFavor;

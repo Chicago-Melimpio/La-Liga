@@ -1,14 +1,14 @@
 
 public class Clasificacion {
 	Equipo[] equipos;
-	
-	 void ordenar() {
+
+	void ordenar() {
 		Equipo[] equipo = this.equipos;
 		equipos =bubbleSort(equipo);
-		
+
 	}
-	
-	 public Equipo[] getEquipos() {
+
+	public Equipo[] getEquipos() {
 		return equipos;
 	}
 
@@ -51,13 +51,31 @@ public class Clasificacion {
 		return listaElementos;
 	}
 
-		
-		 void mostrar() {
-			ordenar();
-			Equipo[] equipo = this.equipos;
-			System.out.println("CLASIFICACION! \n");
-			for(int i = 0; i < equipo.length; i++) {
-				System.out.println((i+1) + "º posicon: " + equipo[i].getNombre() + " " + equipo[i].getPuntos()+" Puntos " + equipo[i].getGolesFavor() + " Goles a favor" + " " + equipo[i].getGolesContra() + " Goles en contra");
-			}
+	private String espacios(Equipo equipo) {
+		int espacios = 8 - (equipo.getNombre().length()/8);
+		String solucion = "";
+		for (int i = 0; i < espacios; i++) {
+			solucion += '\t';
 		}
+		return solucion;
+	}
+
+
+	void mostrar() {
+		ordenar();
+		Equipo[] equipo = this.equipos;
+		System.out.println();
+		System.out.println("¡¡¡CLASIFICACION!!!");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tP\t\tGF\t\tGC\t\tPJ\t\tPG\t\tPP\t\tPE");
+		for(int i = 0; i < equipo.length; i++) {
+			if(equipo[i].getNombre().length() != 36) {
+				while(equipo[i].getNombre().length() <36) {
+					equipo[i].setNombre(equipo[i].getNombre()+" ");
+				}
+			}
+			System.out.println((i+1) + "º posicon: " + equipo[i].getNombre() + espacios(equipo[i]) 
+			+ equipo[i].getPuntos()+"\t\t" + equipo[i].getGolesFavor() + "\t\t" 
+					+ equipo[i].getGolesContra() + "\t\t"+equipo[i].getPartidos()+ "\t\t"+equipo[i].getPartidosGanados()+"\t\t"+equipo[i].getPartidosPerdidos()+"\t\t"+equipo[i].getPartidosEmpatados());
+		}
+	}
 }

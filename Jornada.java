@@ -16,8 +16,8 @@ public class Jornada {
 	
 	public void generarResultado(Partido partido) {
 		int[] i = new int[2];
-		i[0] = (int)Math.floor(Math.random()*10);
-		i[1] = (int)Math.floor(Math.random()*10);
+		i[0] = (int)Math.floor(Math.random()*7);
+		i[1] = (int)Math.floor(Math.random()*7);
 		partido.setResultado(i);
 	}
 
