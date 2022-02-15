@@ -15,7 +15,7 @@ public class Principal {
 		Calendario calendario = crearCalendario(listaEquipos, listaArbitros);
 
 		System.out.println("Seleccione opcion: \n 1. Mostrar Equipos. \n 2.Mostrar Arbitros. \n 3.Todas las plantillas.  \n "
-				+ "4. Mostrar Calendario. \n" + " 5. Jugar \n" + " 6. Mostrar la Clasificaci�n");
+				+ "4. Mostrar Calendario. \n" + " 5. Jugar \n" + " 6. Mostrar la Clasificación");
 
 		int opcion;
 		opcion = sc.nextInt();
@@ -29,14 +29,14 @@ public class Principal {
 				Equipo equipo = listaEquipos[i];
 				mostrarPlantilla(equipo);
 				break;			
-				
+
 			case 2:
 				mostrarArbitros(listaArbitros);
 				break;
 			case 3:
 				mostrarEquiposLiga(listaEquipos);
 				break;
-				
+
 			case 4:
 				mostrarCalendario(calendario);
 				break;
@@ -64,10 +64,10 @@ public class Principal {
 				clasificacion.mostrar();
 				System.out.println();
 				break;
-				
+
 			default:
 				break;
-				
+
 
 			}
 			if(opcion != 0) {
@@ -112,6 +112,8 @@ public class Principal {
 		System.out.println("Equipos: ");
 		for (int i=0 ; i <numeroEquipos; i++) {
 			System.out.println("Equipo "+ i+ " : "+listaEquipos[i].getNombre());
+			System.out.println("La camiseta que usara este equipo en los parrtidos que juege de Local sera: "+listaEquipos[i].getEquipacionCasa());
+			System.out.println("La camiseta que usara este equipo en los parrtidos que juege de Visitante sera: "+listaEquipos[i].getEquipacionFuera());
 			System.out.println();
 		}
 	}
@@ -130,7 +132,7 @@ public class Principal {
 				System.out.println(listaJugadores[i].getNombre()+" "+listaJugadores[j].getApellidos());
 				System.out.println("El dorsal del jugador es: "+listaJugadores[j].getDorsal());
 				System.out.println("La categoria del jugador es: "+listaJugadores[j].getCategoria());
-				System.out.println("La posici�n del jugador es: "+listaJugadores[j].getPosicion());
+				System.out.println("La posición del jugador es: "+listaJugadores[j].getPosicion());
 				System.out.println("");
 			}
 			System.out.println("----------------------------------------------------");
@@ -147,7 +149,7 @@ public class Principal {
 			System.out.println(equipo.getNombre()+" "+jugador.getApellidos());
 			System.out.println("El dorsal del jugador es: "+jugador.getDorsal());
 			System.out.println("La categoria del jugador es: "+jugador.getCategoria());
-			System.out.println("La posici�n del jugador es: "+jugador.getPosicion());
+			System.out.println("La posición del jugador es: "+jugador.getPosicion());
 			System.out.println("");
 		}
 		System.out.println("El campo del equipo es: " + equipo.getCampo().getNombre());
@@ -157,7 +159,7 @@ public class Principal {
 
 
 
-		String [] nombres = {"Mateu", "Gil", "Del Cerro Grande", "Gonz�lez Gonz�lez ",
+		String [] nombres = {"Mateu", "Gil", "Del Cerro Grande", "González González ",
 		"Soto Grado"};
 		String [] apellido = {" Real Madrid"," Barcelona"," Real Betico Balompie"};
 		Arbitro [] listaArbitros = new Arbitro[25];
@@ -188,9 +190,9 @@ public class Principal {
 		String[] nombres = {"Antonio", "Pepito", "Alejandra", "Ismael", "Hugo", "Oliver","Kalesi",
 				"Ingrid","Astrid","Indira","Jenny","Jessi","Vane","Joel","Bruno",
 				"Sasha","Billie","Masha","Pingu"};
-		String[] apellidos = {"Messi", "Vinicius", "Cristiano", "Ronaldo", "Piqué","Bale (lesionado)",
-				"Amunike","N'kono","Butragueño","Sanchís","Neymar","Batistuta","Maradona",
-				"Pelé","Beckenbauer"};
+		String[] apellidos = {"Messi", "Vinicius", "Cristiano", "Ronaldo", "PiquÃ©","Bale (lesionado)",
+				"Amunike","N'kono","ButragueÃ±o","SanchÃ­s","Neymar","Batistuta","Maradona",
+				"PelÃ©","Beckenbauer"};
 		String[] posiciones = {"Portero/a","Defensa","Centrocampista","Delantero/a"};
 
 		//Estructura de Array de Jugadores
@@ -211,7 +213,7 @@ public class Principal {
 			String apellido2 = apellidos[numero];
 			jug.setApellidos(apellido1+" "+apellido2);
 
-			//Posición
+			//PosiciÃ³n
 			numero = (int) Math.floor(Math.random()*posiciones.length);
 			String posicion = posiciones[numero];
 			jug.setPosicion(posicion);
@@ -234,15 +236,19 @@ public class Principal {
 
 	private static Equipo[] crearEquipos(int numeroEquipos,int edad) {
 
-		String [] nombreBarrios = {"El Candado", "Huelin", "Tiro Pichón", "Rincón de la Victoria", "La Rosaleda", "Torremolinos",
-				"Velez Málaga","Cerrado de Calderon", "El Puerto de la Torre", "Bresca", "Mezquitilla", "Teatinos", "Motril",
-				"Centro","Santa Paula", "El Palo", "Los Corazones", "Las Delicias", "Recogidas","Nueva Málaga", "Casas Blancas",
+		String [] nombreBarrios = {"El Candado", "Huelin", "Tiro PichÃ³n", "RincÃ³n de la Victoria", "La Rosaleda", "Torremolinos",
+				"Velez MÃ¡laga","Cerrado de Calderon", "El Puerto de la Torre", "Bresca", "Mezquitilla", "Teatinos", "Motril",
+				"Centro","Santa Paula", "El Palo", "Los Corazones", "Las Delicias", "Recogidas","Nueva MÃ¡laga", "Casas Blancas",
 				"La Palmilla","Los Asperones","Campanillas","La Corta"};
 		String [] mascotas = {"Los Pollos", "Los Araclanes", "Los Limones", "Los Delfines", "Los Chanquetes", "Los Gatitos",
 				"Los Boquerones", "Los Toros", "Los Perritos", "Los Halcones", "Los Ornitorrincos", "Los Caracoles",
 				"Los Palomos Cojos", "Los Heterosaurios", "Las Tortugas Ninjas", "Los Pintarrojas"};
 
 		Equipo [] listaEquipos= new Equipo[numeroEquipos];
+
+		String[] CamisetaLocal = {"Rojo","Amarillo","Naranja","Verde"};
+
+		String[] CamisetaVisitante = {"Azul","Negro","Blanco"};
 
 		for (int i=0; i<numeroEquipos; i++) {
 			//Creamos Equipo
@@ -277,6 +283,16 @@ public class Principal {
 			crearCampos(equipo);
 			//Meter el equipo en el array de equipos
 
+			//Crear Camiseta Local
+			int numero1 = (int) Math.floor(Math.random()*CamisetaLocal.length);
+			String CamisetaL= CamisetaLocal[numero1];
+			equipo.setEquipacionCasa(CamisetaL);
+
+			//Crear Camiseta Visitante
+			int numero2 = (int) Math.floor(Math.random()*CamisetaVisitante.length);
+			String CamisetaV= CamisetaLocal[numero2];
+			equipo.setEquipacionFuera(CamisetaV);
+
 			listaEquipos[i]=equipo;
 
 
@@ -287,10 +303,10 @@ public class Principal {
 	}
 
 	private static Campo crearCampos(Equipo equipo) {
-		String [] campos = {"San Mam�s", "Vicente Calder�n", "Campo nuevo", "Bala�dos", "Riazor", "Ipurua",
-				"Alfonso P�rez", "Nuevo Lois C�rmenes", "Estadio de Gran Canaria", "Ciutat de Val�ncia",
-				"Estadio de Vallecas", "Benito Villamar�n","Santiago Bnernab�u", "Anoeta",
-				"El Molin�n", "Ram�n S�nchez Piju�n", "Mestalla", "El Madrigal"};
+		String [] campos = {"San Mamés", "Vicente Calderón", "Campo nuevo", "Balaídos", "Riazor", "Ipurua",
+				"Alfonso Pérez", "Nuevo Lois Cármenes", "Estadio de Gran Canaria", "Ciutat de València",
+				"Estadio de Vallecas", "Benito Villamarín","Santiago Bnernabéu", "Anoeta",
+				"El Molinón", "Ramón Sánchez Pijuán", "Mestalla", "El Madrigal"};
 
 
 
@@ -308,9 +324,9 @@ public class Principal {
 		String[] nombres = {"Antonio", "Pepito", "Alejandra", "Ismael", "Hugo", "Oliver","Kalesi",
 				"Ingrid","Astrid","Indira","Jenny","Jessi","Vane","Joel","Bruno",
 				"Sasha","Billie","Masha","Pingu"};
-		String[] apellidos = {"Messi", "Vinicius", "Cristiano", "Ronaldo", "Piqué","Bale (lesionado)",
-				"Amunike","N'kono","Butragueño","Sanchís","Neymar","Batistuta","Maradona",
-				"Pelé","Beckenbauer"};
+		String[] apellidos = {"Messi", "Vinicius", "Cristiano", "Ronaldo", "PiquÃ©","Bale (lesionado)",
+				"Amunike","N'kono","ButragueÃ±o","SanchÃ­s","Neymar","Batistuta","Maradona",
+				"PelÃ©","Beckenbauer"};
 		Entrenador entrenador = new Entrenador();
 
 		//Nombre
@@ -439,7 +455,7 @@ public class Principal {
 				int[] k = partidos[j].getResultado();
 				partidos[j].ganador(k);	
 				System.out.println(partidos[j].getHorario() + " " + local.getNombre() +" "+ k[0] 
-				+ " - "  + k[1]+" "+ visitante.getNombre() + " Campo: " + local.getCampo().getNombre());
+						+ " - "  + k[1]+" "+ visitante.getNombre() + " Campo: " + local.getCampo().getNombre());
 				System.out.println();
 			}
 		}
