@@ -66,10 +66,10 @@ public class Clasificacion {
 		Equipo[] equipo = this.equipos;
 		System.out.println();
 		System.out.println("¡¡¡CLASIFICACION!!!");
-		System.out.println("\t\t\t\t\t\t\t\t\t\tP\t\tGF\t\tGC\t\tPJ\t\tPG\t\tPP\t\tPE");
+		System.out.println("\t\t\t\t\t\t\t\t\tP\t\tGF\t\tGC\t\tPJ\t\tPG\t\tPP\t\tPE\n");
 		for(int i = 0; i < equipo.length; i++) {
-			if(equipo[i].getNombre().length() != 36) {
-				while(equipo[i].getNombre().length() <36) {
+			if(equipo[i].getNombre().length() != 40) {
+				while(equipo[i].getNombre().length() <40) {
 					equipo[i].setNombre(equipo[i].getNombre()+" ");
 				}
 			}

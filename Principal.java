@@ -14,8 +14,8 @@ public class Principal {
 		Iniciar(listaEquipos);
 		Calendario calendario = crearCalendario(listaEquipos, listaArbitros);
 
-		System.out.println("Seleccione opcion: \n 1. Mostrar Equipos. \n 2.Mostrar Arbitros. \n 3.Todas las plantillas.  \n "
-				+ "4. Mostrar Calendario. \n" + " 5. Jugar \n" + " 6. Mostrar la Clasificación");
+		System.out.println("Seleccione opcion: \n 1. Mostrar Equipos. \n 2. Mostrar Arbitros. \n 3. Todas las plantillas.  \n "
+				+ "4. Mostrar Calendario. \n" + " 5. Jugar \n" + " 6. Mostrar la Clasificacion");
 
 		int opcion;
 		opcion = sc.nextInt();
